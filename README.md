@@ -36,7 +36,7 @@ The merged dataset comprises **188,939 samples** with **78 features** and **1 la
 | DoS slowloris | 5,306 |
 | DoS Slowhttptest | 5,074 |
 
-For model training, labels are converted to binary: **BENIGN \u2192 0**, **All attacks \u2192 1**.
+For model training, labels are converted to binary: **BENIGN → 0**, **All attacks → 1**.
 
 ## Data Preprocessing
 
@@ -50,10 +50,10 @@ The dataset is preprocessed using the following steps:
 
 The dataset includes 78 features extracted using CICFlowMeter. Key feature selection steps:
 
-- **SVM Model**: `SelectPercentile(f_classif, percentile=9)` \u2014 selects the top 9% of features (7 features):
+- **SVM Model**: `SelectPercentile(f_classif, percentile=9)` — selects the top 9% of features (7 features):
   `Bwd Packet Length Max`, `Bwd Packet Length Min`, `Bwd Packet Length Mean`, `Bwd Packet Length Std`, `Fwd Packets/s`, `Max Packet Length`, `Average Packet Size`
 
-- **Naive Bayes Model**: `SelectPercentile(f_classif, percentile=10)` \u2014 selects the top 10% of features (8 features):
+- **Naive Bayes Model**: `SelectPercentile(f_classif, percentile=10)` — selects the top 10% of features (8 features):
   `Bwd Packet Length Max`, `Bwd Packet Length Min`, `Bwd Packet Length Mean`, `Bwd Packet Length Std`, `Fwd Packets/s`, `Bwd Packets/s`, `Max Packet Length`, `Average Packet Size`
 
 ## Models
@@ -94,16 +94,16 @@ To replicate the results:
 ## Directory Structure
 ```
 ML-Project_IDS/
-\u2502
-\u251c\u2500\u2500 merge all dataset into one.ipynb   # Dataset merging and preprocessing
-\u251c\u2500\u2500 IDS.ipynb                          # Initial exploration (single-file, Naive Bayes)
-\u251c\u2500\u2500 IDS using SVM.ipynb                # SVM classifier training and evaluation
-\u251c\u2500\u2500 IDS using Naive Bayes.ipynb        # Naive Bayes classifier training and evaluation
-\u251c\u2500\u2500 README.md                          # Project documentation
-\u2514\u2500\u2500 _config.yml                        # GitHub Pages configuration
+│
+├── merge all dataset into one.ipynb   # Dataset merging and preprocessing
+├── IDS.ipynb                          # Initial exploration (single-file, Naive Bayes)
+├── IDS using SVM.ipynb                # SVM classifier training and evaluation
+├── IDS using Naive Bayes.ipynb        # Naive Bayes classifier training and evaluation
+├── README.md                          # Project documentation
+└── _config.yml                        # GitHub Pages configuration
 ```
 
 ## Acknowledgments
 
-- Dataset: [Canadian Institute for Cybersecurity \u2014 CICIDS 2017](https://www.unb.ca/cic/datasets/ids-2017.html)
+- Dataset: [Canadian Institute for Cybersecurity — CICIDS 2017](https://www.unb.ca/cic/datasets/ids-2017.html)
 - Feature extraction: CICFlowMeter
